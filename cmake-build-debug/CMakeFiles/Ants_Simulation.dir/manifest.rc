@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "D:/SomeProgs/SomethingNew/Ants_Simulation/cmake-build-debug/CMakeFiles/Ants_Simulation.dir/embed.manifest"
