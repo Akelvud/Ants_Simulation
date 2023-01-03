@@ -65,6 +65,14 @@ build CMakeFiles\Ants_Simulation.dir\visualization\Visualizer.cpp.obj: CXX_COMPI
   TARGET_COMPILE_PDB = CMakeFiles\Ants_Simulation.dir\
   TARGET_PDB = Ants_Simulation.pdb
 
+build CMakeFiles\Ants_Simulation.dir\visualization\Color.cpp.obj: CXX_COMPILER__Ants_Simulation_Debug D$:\SomeProgs\SomethingNew\Ants_Simulation\visualization\Color.cpp || cmake_object_order_depends_target_Ants_Simulation
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd -std:c++14
+  INCLUDES = -ID:\SomeProgs\SomethingNew\Ants_Simulation\lib\SDL\include
+  OBJECT_DIR = CMakeFiles\Ants_Simulation.dir
+  OBJECT_FILE_DIR = CMakeFiles\Ants_Simulation.dir\visualization
+  TARGET_COMPILE_PDB = CMakeFiles\Ants_Simulation.dir\
+  TARGET_PDB = Ants_Simulation.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Ants_Simulation
@@ -73,7 +81,7 @@ build CMakeFiles\Ants_Simulation.dir\visualization\Visualizer.cpp.obj: CXX_COMPI
 #############################################
 # Link the executable Ants_Simulation.exe
 
-build Ants_Simulation.exe: CXX_EXECUTABLE_LINKER__Ants_Simulation_Debug CMakeFiles\Ants_Simulation.dir\main.cpp.obj CMakeFiles\Ants_Simulation.dir\visualization\Visualizer.cpp.obj
+build Ants_Simulation.exe: CXX_EXECUTABLE_LINKER__Ants_Simulation_Debug CMakeFiles\Ants_Simulation.dir\main.cpp.obj CMakeFiles\Ants_Simulation.dir\visualization\Visualizer.cpp.obj CMakeFiles\Ants_Simulation.dir\visualization\Color.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:X86 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = SDL2main.lib  SDL2.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
