@@ -1,7 +1,8 @@
 # ninja log v5
-1	1488	6943724042406951	CMakeFiles/Ants_Simulation.dir/main.cpp.obj	3a4aff5d32867f5c
-1	297	6943725006418886	build.ninja	bf8ca87ea780c290
-0	1411	6943726686715746	CMakeFiles/Ants_Simulation.dir/main.cpp.obj	3a4aff5d32867f5c
-1426	2418	6943726696408816	Ants_Simulation.exe	137eb8c82e599ccc
-1	1154	6943728806545706	CMakeFiles/Ants_Simulation.dir/main.cpp.obj	3a4aff5d32867f5c
-1158	1510	6943728809438193	Ants_Simulation.exe	137eb8c82e599ccc
+0	1179	6944146088034205	CMakeFiles/Ants_Simulation.dir/main.cpp.obj	3a4aff5d32867f5c
+1	297	6944146643562205	build.ninja	bf8ca87ea780c290
+1206	2290	6944146098880726	Ants_Simulation.exe	137eb8c82e599ccc
+10	1082	6944149511895754	CMakeFiles/Ants_Simulation.dir/main.cpp.obj	3a4aff5d32867f5c
+1	1104	6944149511934393	CMakeFiles/Ants_Simulation.dir/visualization/Visualizer.cpp.obj	6e6a9a7b5a0b79d7
+1	873	6944150170634460	CMakeFiles/Ants_Simulation.dir/visualization/Visualizer.cpp.obj	6e6a9a7b5a0b79d7
+883	1406	6944150174961283	Ants_Simulation.exe	3f1e9ed65651a97b
