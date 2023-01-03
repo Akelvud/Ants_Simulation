@@ -1,13 +1,19 @@
 #include "Visualizer.h"
 
-int Visualizer::SCREEN_WIDTH_ = 900;
-int Visualizer::SCREEN_HEIGHT_ = 600;
+int Visualizer::SCREEN_WIDTH_ = 0;
+int Visualizer::SCREEN_HEIGHT_ = 0;
 
 SDL_Window *Visualizer::win_ = NULL;
 SDL_Renderer *Visualizer::ren_ = NULL;
 
+vector<vector<Color> > Visualizer::LastColorMap_ = vector<vector<Color> > (0);
 
-bool Visualizer::Init() {
+bool Visualizer::Init(int width, int height) {
+    SCREEN_HEIGHT_ = height;
+    SCREEN_WIDTH_ = width;
+
+    LastColorMap_ = vector<vector<Color> > (width, (vector<Color>(height)));
+
     bool ok = true;
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -36,4 +42,20 @@ void Visualizer::Quit() {
     ren_ = NULL;
 
     SDL_Quit();
+}
+
+void Visualizer::Render(vector<vector<Color>>& ColorMap) {
+    for (int i = 0; i < SCREEN_WIDTH_; i++) {
+        for (int j = 0; j <  SCREEN_HEIGHT_; j++) {
+            if (LastColorMap_[i][j] != ColorMap[i][j]) {
+                LastColorMap_[i][j] = ColorMap[i][j];
+
+                Color tc = LastColorMap_[i][j];
+                SDL_SetRenderDrawColor(ren_, tc.GetR(), tc.GetG(), tc.GetB(), 0x00);
+                SDL_RenderDrawPoint(ren_, i, j);
+            }
+        }
+    }
+
+    SDL_RenderPresent(ren_);
 }
