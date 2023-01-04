@@ -6,7 +6,7 @@
 
 class Color {
 public:
-    Color() = default;
+    Color();
     Color(int, int, int);
 
     bool operator!=(const Color&);
@@ -15,9 +15,9 @@ public:
     int GetG() const;
     int GetB() const;
 private:
-    int R_;
-    int G_;
-    int B_;
+    int r_;
+    int g_;
+    int b_;
 };
 
 

@@ -26,5 +26,5 @@ void Ant::Move() {
     lastY_ = y_;
 
     x_ = availPos[randI].first;
-    x_ = availPos[randI].second;
+    y_ = availPos[randI].second;
 }

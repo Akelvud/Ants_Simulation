@@ -6,13 +6,13 @@ int Visualizer::SCREEN_HEIGHT_ = 0;
 SDL_Window *Visualizer::win_ = NULL;
 SDL_Renderer *Visualizer::ren_ = NULL;
 
-vector<vector<Color> > Visualizer::LastColorMap_ = vector<vector<Color> > (0);
+vector<vector<Color> > Visualizer::lastColorMap_ = vector<vector<Color> > (0);
 
 bool Visualizer::Init(int width, int height) {
     SCREEN_HEIGHT_ = height;
     SCREEN_WIDTH_ = width;
 
-    LastColorMap_ = vector<vector<Color> > (width, (vector<Color>(height)));
+    lastColorMap_ = vector<vector<Color> > (width, (vector<Color>(height)));
 
     bool ok = true;
 
@@ -31,6 +31,12 @@ bool Visualizer::Init(int width, int height) {
         cout << "Can't create renderer: " << SDL_GetError() << endl;
         ok = false;
     }
+
+    SDL_SetRenderDrawColor(ren_, 0xFF, 0xFF, 0xFF, 0x00);
+    SDL_RenderClear(ren_);
+
+    SDL_SetRenderDrawColor(ren_, 0, 0, 0, 0x00);
+
     return ok;
 }
 
@@ -47,10 +53,10 @@ void Visualizer::Quit() {
 void Visualizer::Render(vector<vector<Color>>& ColorMap) {
     for (int i = 0; i < SCREEN_WIDTH_; i++) {
         for (int j = 0; j <  SCREEN_HEIGHT_; j++) {
-            if (LastColorMap_[i][j] != ColorMap[i][j]) {
-                LastColorMap_[i][j] = ColorMap[i][j];
+            if (lastColorMap_[i][j] != ColorMap[i][j]) {
+                lastColorMap_[i][j] = ColorMap[i][j];
 
-                Color tc = LastColorMap_[i][j];
+                Color tc = lastColorMap_[i][j];
                 SDL_SetRenderDrawColor(ren_, tc.GetR(), tc.GetG(), tc.GetB(), 0x00);
                 SDL_RenderDrawPoint(ren_, i, j);
             }

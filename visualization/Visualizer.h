@@ -22,7 +22,7 @@ private:
     static SDL_Window *win_;
     static SDL_Renderer *ren_;
 
-    static vector<vector<Color> > LastColorMap_;
+    static vector<vector<Color> > lastColorMap_;
 };
 
 

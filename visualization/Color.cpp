@@ -1,11 +1,15 @@
 #include "Color.h"
 
+Color::Color() {
+    r_ = 255;
+    g_ = 255;
+    b_ = 255;
+}
+Color::Color(int r, int g, int b) : r_(r), g_(g), b_(b) {};
 
-Color::Color(int r, int g, int b) : R_(r), G_(g), B_(b) {};
-
-int Color::GetR() const {return R_;}
-int Color::GetG() const {return G_;}
-int Color::GetB() const {return B_;}
+int Color::GetR() const {return r_;}
+int Color::GetG() const {return g_;}
+int Color::GetB() const {return b_;}
 
 
 bool Color::operator!=(const Color & elem) {
