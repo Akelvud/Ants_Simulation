@@ -1,5 +1,8 @@
 #include "Ant.h"
 
+
+#define PI 3.14159265
+
 Ant::Ant() {
     x_ = 0;
     y_ = 0;
@@ -7,12 +10,9 @@ Ant::Ant() {
 
 Ant::Ant(int sx, int sy) : x_(sx), y_(sy) {
 
-    dx_ = rand() % 10000;
-    if (dx_ != 0) dx_ /= 9999;
-    dy_ = sqrt(1.0 - dx_ * dx_);
-
-    if (rand() % 2) dx_ *= -1;
-    if (rand() % 2) dy_ *= -1;
+    double rd = (rand() % 1000);
+    if (rd != 0) rd /= 1000;
+    dAngle_ = 360.0 * rd;
 
 }
 
@@ -20,8 +20,16 @@ int Ant::GetX() {return (int)x_;}
 int Ant::GetY() {return (int)y_;}
 
 void Ant::Move() {
-    x_ = x_ + dx_;
-    y_ = y_ + dy_;
+    double newAngel = dAngle_;
+
+    double rd = (rand() % 1000);
+    if (rd != 0) rd /= 1000;
+    if (rand() % 2) rd *= -1;
+
+    newAngel += 20.0 * rd;
+
+    x_ = x_ + cos(newAngel * PI / 180.0);
+    y_ = y_ + sin(newAngel * PI / 180.0);
 }
 
 

@@ -17,9 +17,8 @@ public:
 
 private:
     double x_;
-    double  y_;
-    double  dx_ = 0;
-    double  dy_ = 0;
+    double y_;
+    double dAngle_ = 0;
 };
 
 

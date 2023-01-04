@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const int antCount = 5000;
+const int antCount = 500;
 const int width = 900;
 const int height = 600;
 
