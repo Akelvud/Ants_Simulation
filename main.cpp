@@ -1,14 +1,15 @@
 #include "visualization/Visualizer.h"
 #include "objects/Ant.h"
+#include <ctime>
 
 using namespace std;
 
-const int antCount = 1000;
+const int antCount = 5000;
 const int width = 900;
 const int height = 600;
 
 int main(int32_t arhc, char ** argv) {
-
+    srand(time(NULL));
 
     Visualizer::Init(width, height);
 
@@ -51,7 +52,7 @@ int main(int32_t arhc, char ** argv) {
         for (int i = 0; i < antCount; i++) {
             int x = ants[i].GetX();
             int y = ants[i].GetY();
-            if (x >= 0 && y >= 0 && x < width && y <= height) {
+            if (x >= 0 && y >= 0 && x < width && y < height) {
                 mc[x][y] = Color(0, 0, 0);
             }
 

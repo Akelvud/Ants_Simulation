@@ -16,10 +16,10 @@ public:
     void Move();
 
 private:
-    int x_;
-    int y_;
-    int lastX_;
-    int lastY_;
+    double x_;
+    double  y_;
+    double  dx_ = 0;
+    double  dy_ = 0;
 };
 
 
